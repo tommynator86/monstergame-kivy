@@ -1,0 +1,92 @@
+<MonsterWidget>:
+   
+    TabbedPanel:
+        do_default_tab: False
+		id: mainpanel
+     
+        TabbedPanelItem:
+            text: 'Kampf'
+			id: kampfpanel
+			GridLayout:
+                rows: 2
+                cols: 1 
+				GridLayout:
+					rows: 2
+					cols: 2
+					size_hint_y: 0.8
+					TextInput:
+						size: 100,100
+						font_size: '10sp'
+						id: ausgabefeld
+						readonly: True
+						allow_copy: False
+					TextInput:
+						font_size: '10sp'
+						size: 100,100
+						id: ausgabefeld2
+						text: 'Monstergame 0.2.0'
+						readonly: True
+						allow_copy: False
+				GridLayout:
+					rows: 1
+					cols: 4
+					size_hint_y: 0.2
+					Button:
+						size: 20, 20
+						text: 'Angreifen'
+						on_press: root.btn_angreifen()
+					Button:
+						size: 20, 20
+						text: 'Heilen/Items'
+						on_press: root.btn_heilen()
+					Button:
+						text: 'Status'
+						size: 20, 20
+						on_press: root.btn_status()
+					Button:
+						on_press: root.btn_flucht()
+						size: 20, 20
+						text: 'Flucht'
+                
+        TabbedPanelItem:
+            text: 'Items'
+			id: itempanel
+			GridLayout:
+                rows: 2
+                cols: 4
+				Label:
+					text: 'Heilen:'
+				Button:
+					size: 50, 50
+					text: 'Brötchen'
+					on_press: root.btn_item1()
+				Button:
+					size: 50, 50
+					text: 'Fisch-Brötchen'
+					on_press: root.btn_item2()
+				Button:
+					size: 50, 50
+					text: 'Pfannkuchen'
+					on_press: root.btn_item3()
+				Label:
+					text: 'Zauber:'
+				Button:
+					size: 50, 50
+					text: 'Feuer Zauber'
+					on_press: root.btn_item4()
+				Button:
+					size: 50, 50
+					text: 'Eis Zauber'
+					on_press: root.btn_item5()
+				Button:
+					size: 50, 50
+					text: 'Blitz Zauber'
+					on_press: root.btn_item6()
+
+                
+        TabbedPanelItem:
+            text: 'Neues Spiel'
+            Button:
+				size: 100, 100
+                text: 'Neues Monstergame'
+				on_press: root.btn_neuesspiel()
